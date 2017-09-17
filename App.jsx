@@ -9,24 +9,27 @@ class App extends Component {
   }
   componentDidMount()
   {
-    fetch('http://facebook.github.io/react-native/movies.json').
+    fetch('https://api.coinmarketcap.com/v1/ticker/?limit=10').
     then((Response)=>Response.json()).
     then((findresponse)=>
         {
+      console.log(findresponse)
       this.setState({
-        data:findresponse.movie,
+      data:findresponse,
       })
-    })
+      })
+   
   }
   render()
   {
     return(
     <div>
       {
-      this.state.data.map((dynamicData,key)=>
+      this.state.data.map((dynamicData, key)=>
        <div>
-      <span>{dynamicData.title}: </span>  
-        <spane>{dynamicData.releaseYear}</spane>
+     <span>{dynamicData.id}     </span>
+     <span>{dynamicData.name}   </span>
+     {dynamicData.symbol}
         </div>
       )
     }
