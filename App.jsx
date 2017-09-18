@@ -39,10 +39,10 @@ class App extends Component {
         <p>  Symbol = {dynamicData.symbol} <br /> </p>
 
         <p> -------------------------   </p>
-
+        <p> -------------------------   </p>
 
         </div>
-        
+
       )
     }
       </div>
